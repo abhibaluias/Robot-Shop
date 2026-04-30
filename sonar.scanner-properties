@@ -1,0 +1,6 @@
+sonar.projectKey=robot-shop
+sonar.projectName=robot-shop
+sonar.sources=.
+sonar.language=
+sonar.python.version=3
+#sonar.shell.version=
