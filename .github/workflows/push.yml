@@ -14,16 +14,16 @@ on:
 
 
 jobs:
+  
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: docker-compose build
-
   sonarqube:
     name: SonarQube
-    runs-on: ubuntu-Latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
@@ -36,3 +36,7 @@ jobs:
       #docker image build 
       - name: Build docker image
         run: docker build -t $GITHUB_SHA .
+      #docker image push
+      - name: Push docker image
+        run: echo ${{secrets.DOCKER_PASSWORD}} |  docker Login -u ${{secrets.DOCKER_USERNAME}} --password-stdin && docker push $GITHUN_SHA
+        
