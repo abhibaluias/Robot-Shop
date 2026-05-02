@@ -25,11 +25,11 @@ jobs:
       - name: Checkout code
         run: docker compose build
 
-      - name: Set up JDK (for SonarQube if Java project)
-        uses: actions/setup-java@v4
-        with:
-          java-version: '8'
-          distribution: 'temurin'
+      #- name: Set up JDK (for SonarQube if Java project)
+       # uses: actions/setup-java@v4
+        #with:
+         # java-version: '8'
+          #distribution: 'temurin'
 
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@v2
