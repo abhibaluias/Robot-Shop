@@ -27,7 +27,7 @@ jobs:
       - name: Set up JDK (for SonarQube if Java project)
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '11'
           distribution: 'temurin'
 
       - name: SonarQube Scan
