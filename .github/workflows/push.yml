@@ -16,8 +16,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  
     steps:
-    #code checkout
+      - uses: actions/checkout@v4
+      - name: Run a Node.js script
+        run: node -v
+   #code checkout
       - uses: actions/checkout@v4.3.1
       - name: Build the stack
         run: docker compose build
